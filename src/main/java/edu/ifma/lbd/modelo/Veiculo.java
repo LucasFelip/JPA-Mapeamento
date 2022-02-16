@@ -16,12 +16,12 @@ public class Veiculo implements Entidade {
 	private String numeroPlaca;
 	
 	@ManyToOne
-	@Column(name = "filial")
+	@JoinColumn(name = "filial")
 	private Filial filial;
 	
 	@ManyToOne
-	@Column(name = "tipo_veiculo")
-	private TipoVeiculo tipoVeiculo;
+	@JoinColumn(name = "tipo_veiculo")
+	private TipoVeiculo tipo_veiculo;
 	
 	@OneToMany(mappedBy = "cliente", cascade = CascadeType.ALL)
 	@Column(name = "frete")

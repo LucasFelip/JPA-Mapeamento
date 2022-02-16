@@ -22,24 +22,24 @@ public class Frete implements Entidade {
 	private Parametro parametro;
 	
 	@ManyToOne
-	@Column(name = "veiculo")
+	@JoinColumn(name = "veiculo")
 	private Veiculo veiculo;
 	
 	@ManyToOne
-	@Column(name = "cliente")
+	@JoinColumn(name = "cliente")
 	private Cliente cliente;
 	
 	@ManyToOne
-	@Column(name = "categoria_frete")
+	@JoinColumn(name = "categoria_frete")
 	private CategoriaFrete categoriaFrete;
 	
 	@ManyToOne
-	@Column(name = "cidade_origem")
-	private Cidade cidadeOrigem;
+	@JoinColumn(name = "cidade_origem")
+	private Cidade cidade_origem;
 	
 	@ManyToOne
-	@Column(name = "cidade_destino")
-	private Cidade cidadeDestino;
+	@JoinColumn(name = "cidade_destino")
+	private Cidade cidade_destino;
 	
 	@OneToMany(mappedBy = "frete", cascade = CascadeType.ALL)
 	@Column(name = "item_frete")

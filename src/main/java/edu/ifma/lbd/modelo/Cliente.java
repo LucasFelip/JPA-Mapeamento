@@ -4,7 +4,6 @@ import java.util.*;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "cliente")
 public class Cliente extends PessoaFisica implements Entidade {
 	
 	@Id

@@ -19,20 +19,20 @@ public class Cidade implements Entidade {
 	private String estado;
 	
 	@ManyToOne
-	@Column(name = "distancia_origem")
+	@JoinColumn(name = "distancia_origem")
 	private Distancia distanciaOrigem;
 	
 	@ManyToOne
-	@Column(name = "distancia_destino")
+	@JoinColumn(name = "distancia_destino")
 	private Distancia distanciaDestino;
 	
-	@OneToMany
+	@OneToMany(mappedBy = "cidade", cascade = CascadeType.ALL)
 	@Column(name = "cidade_destino")
-	private Set<Frete> cidadeDestino = new LinkedHashSet<>();
+	private Set<Frete> cidade_destino = new LinkedHashSet<>();
 	
 	@OneToMany(mappedBy = "cidade", cascade = CascadeType.ALL)
 	@Column(name = "cidade_origem")
-	private Set<Frete> cidadeOrigem = new LinkedHashSet<>();
+	private Set<Frete> cidade_origem = new LinkedHashSet<>();
 	
 	public Integer getId() {
 		return id;
@@ -44,11 +44,11 @@ public class Cidade implements Entidade {
     }
 	
 	public void adicionaOrigem(Frete e) {
-		cidadeOrigem.add(e);
+		cidade_origem.add(e);
     }
 	
 	public void adicionaDestino(Frete e) {
-		cidadeDestino.add(e);
+		cidade_destino.add(e);
     }
 	
 	

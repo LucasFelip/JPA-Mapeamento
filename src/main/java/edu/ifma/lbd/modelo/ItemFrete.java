@@ -18,7 +18,7 @@ public class ItemFrete implements Entidade{
 	private float peso;
 	
 	@ManyToOne
-	@Column(name = "frete")
+	@JoinColumn(name = "frete")
 	private Frete frete;
 	
 	public Integer getId() {

@@ -19,7 +19,7 @@ public class Dependente implements Entidade {
 	private Date dataNascimento;
 	
 	@ManyToOne
-	@Column(name = "funcionario")
+	@JoinColumn(name = "funcionario")
 	private Funcionario funcionario;
 
 	@Override
